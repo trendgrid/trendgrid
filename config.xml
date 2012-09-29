@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.blenke.trendgrid"
+        versionCode="1" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+	
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+	<!-- ios -->
+
+	<!-- android -->
+
+	
+    <name>Trend Grid</name>
+
+    <description>
+        Trend Grid is an animated grid that pulls in keywords from Google Trends and is populated by Google News.
+    </description>
+
+    <author href="https://build.phonegap.com" email="trendgrid@blenke.com">
+        Nathan Blenke
+    </author>
+
+</widget>
