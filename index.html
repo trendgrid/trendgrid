@@ -270,7 +270,7 @@ var z = {
             trunc = 110,
             elimg = cnt.split('src="')[1].split('"')[0];
 
-        if (elimg.slice(2) === '//') {
+        if (elimg.substring(0, 2) === '//') {
             elimg = 'http:' + elimg;
         }
         if (cnt.search(/src=/i) !== -1) {
