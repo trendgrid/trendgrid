@@ -7,8 +7,9 @@
 
     <!-- versionCode is optional and Android only -->
 	
+	<preference name="orientation" value="default" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
-
+	
 	<!-- ios -->
 
 	<!-- android -->
@@ -23,5 +24,19 @@
     <author href="https://build.phonegap.com" email="trendgrid@blenke.com">
         Nathan Blenke
     </author>
+
+	<!-- icons -->
+	<icon src="icon.png" />
+	<icon src="icons/ios/icon.png" width="57" height="57" />
+	<icon src="icons/ios/icon_at_2x.png" width="114" height="114" />
+	<icon src="icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+
+	<!-- Splash Screens -->
+	<gap:splash src="splash.png" />
+	<gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 
 </widget>
