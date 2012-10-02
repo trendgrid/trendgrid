@@ -375,6 +375,12 @@ var z = {
                        '<a href="" class="remove detail-btn">&times;</a>');
             el.find('a.more:gt(0), a.remove:gt(0)').remove();
             el.find('a:contains("More")').remove();
+
+			var strImgSrc = $(this).find('img').attr('src');
+			if (strImgSrc.substring(0, 2) === '//') {
+				strImgSrc = 'http:' + strImgSrc;
+			}
+			$(this).find('img').attr('src', strImgSrc);
         });
                   
         $('.detail a').attr('target', '_blank');
