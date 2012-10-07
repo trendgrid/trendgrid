@@ -4,136 +4,7 @@
 <title>Trend Grid</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
-<style type="text/css">
-#align {margin:0 auto}
-body {background:#010101;color:#fff;}
-a {color:#fff;outline:none}
-h1, h5, h6, ul, li, p {margin:0;padding:0;}
-
-.button {float:left;height:37px;width:35px;border:none;color:#fff;
-  text-align:center;text-decoration:none;text-shadow: 0 1px 1px #222;color:#eee;
-  background:#333 url(button.png)}
-.button:hover,
-.button:active {background-color:#444;text-shadow: 0 2px 1px #111;color:#fff}
-#next {background-position:-70px}
-#prev {background-position:-35px}
-#cont {background-position:0;display:none;margin:0 4px 0 0}
-
-#trends {float:left;height:35px;border:1px solid #333;overflow:hidden;
-  background:#111;box-shadow:0 0 6px #000 inset}
-#trends ol {margin:0;padding:0;height:35px;}
-#trends li {float:left;display:block;margin:0 10px;font:bold 13px/35px 'Arial' , sans-serif;}
-#trends a {color:#bbb;text-decoration:none}
-#trends li.on {font:bold 20px/35px 'Arial' , sans-serif;}
-#trends li.on a {color:#fff}
-
-#grid {float:left;margin:10px 0 20px;border-top:1px solid #444;border-left:1px solid #444;
-  position:relative}
-#grid ul {height:58px;
-  background-image:-moz-linear-gradient(top, #171717, #111111); 
-  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #171717),color-stop(1, #111111));
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#171717', EndColorStr='#111111')";}
-#grid li {list-style-type:none;float:left;color:#fff;border-right:1px solid #444;border-bottom:1px solid #444}
-
-#mover {position:absolute;top:0;width:100%;overflow:hidden}
-
-.item {height:50px;padding:2px 5px 5px;color:#fff;z-index:1;cursor:pointer;
-  text-decoration:none;position:absolute;background:#222;font:11px/1.12 sans-serif;overflow:hidden;
-  text-shadow:0 1px 1px #000;}
-.item h6 {font:bold 12px/1.12 'Arial', sans-serif}
-.item * {display:none}
-.item h6,
-.item img.thumb {display:block}
-.item img.thumb {float:left;margin:2px 4px 0 0;width:48px;height:48px;border:1px solid #444}
-.item p {display:none}
-
-.hover {background:#333}
-.clicked {background:#111;color:salmon;text-shadow:none}
-
-.detail {clear:both;margin:20px 0;padding:10px 10px 20px 10px;background:#111;text-shadow: 0 1px 1px #000;
-  border-top:1px solid #555;
-  background-image:-moz-linear-gradient(top, #333, #222); 
-  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #333333),color-stop(1, #222222));
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#333333', EndColorStr='#222222')";
-  -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
-.detail * {font:13px/1.4 sans-serif;}
-.detail img.thumb {display:none}
-.detail h6 {font:bold 16px/1.4 sans-serif;margin:10px 0 5px}
-.detail3 {opacity:.9;filter:alpha(opacity=90);
-  -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=90)'}
-.detail2 {opacity:.7;filter:alpha(opacity=70);
-  -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=70)'}
-.detail1 {opacity:.5;filter:alpha(opacity=50);
-  -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)'}
-.detail0 {opacity:.3;filter:alpha(opacity=30);
-  -ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=30)'}
-
-.detail a.detail-btn {margin:0 0 20px 10px;padding:0 15px;
-  float:right;text-decoration:none;font-size:26px;line-height:30px;height:35px;font-weight:bold;
-  border-top:1px solid #666;
-  background-image:-moz-linear-gradient(top, #555, #444); 
-  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #555),color-stop(1, #444));
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#555555', EndColorStr='#444444')";
-  -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
-  -moz-box-shadow:0px 2px 2px rgba(0,0,0,.4);-webkit-box-shadow:0px 2px 2px rgba(0,0,0,.4);
-  box-shadow:0px 2px 2px rgba(0,0,0,.4);}
-.detail a.detail-btn:hover {border-top:1px solid #888;
-  background-image:-moz-linear-gradient(top, #777, #666); 
-  background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #777),color-stop(1, #666));
-  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#777777', EndColorStr='#666666')";}
-.detail a.remove {line-height:34px}
-
-#loader {width:100%;height:56px;background:#000 no-repeat center url(load.gif);}
-
-h5 {float:left;margin:0 20px 20px 0;font:10px 'Arial', sans-serif;text-transform:uppercase;color:#F16529}
-h5 span {color:darkgrey}
-
-.html5badge {float:right;margin:-4px 0 0}
-
-@media screen {
-  #align {width:980px}
-  #trends {width:908px}
-  #trends.trendscont {width:869px}
-  #mover {height:405px}
-  .item {width:234px}
-  .detail {width:960px}
-  .n2 {margin-left:245px}
-  .n3 {margin-left:490px}
-  .n4 {margin-left:735px}
-}
-@media screen and (min-width: 768px) and (max-width: 980px) {
-  #align {width:748px}
-  #trends {width:676px}
-  #trends.trendscont {width:637px}
-  #mover {height:347px}
-  .item {width:238px}
-  .detail {width:728px}
-  .n2 {margin-left:249px}
-  .n3 {margin-left:498px}
-  .n4 {display:none}
-}
-@media screen and (min-width: 0) and (max-width: 980px) {
-  #mover {height:347px}
-}
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  #align {width:460px}
-  #trends {width:388px}
-  #trends.trendscont {width:349px}
-  .item {width:219px}
-  .detail {width:440px}
-  .n2 {margin-left:230px}
-  .n3,
-  .n4 {display:none}
-}
-@media screen and (max-width: 479px) {
-  #align {width:300px}
-  #trends {width:228px}
-  #trends.trendscont {width:189px}
-  .item {width:290px}
-  .detail {width:280px}
-  .n2, .n3, .n4 {margin-left:0}
-}
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -145,11 +16,19 @@ h5 span {color:darkgrey}
     <div id="grid">
         <div id="mover"></div>
     </div>
-    <!--<h5>Trend Grid <span>Alpha v0.8</span></h5> -->
 </div>
-
+<script type="text/javascript" src="cordova-2.0.0.js"></script>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
+
+document.addEventListener("offline", onOffline, false);
+if (!navigator.onLine) {
+  onOffline();
+}
+
+function onOffline() {
+    $('#align').html('<h2>A network connection is required.</h2>')
+}
 /*
  * Trend Grid v0.8
  * An animated news grid populated by Google News results from current Google Trends keywords
